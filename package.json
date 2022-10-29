@@ -41,14 +41,14 @@
   },
   "repository": {
     "type": "git",
-    "url": ""
+    "url": "https://github.com/AceEnderslashSukrish/COMP229-F22-MidTerm-Start"
   },
   "keywords": [
     "NodeJS",
     "ExpressJS",
     "EJS"
   ],
-  "author": "Your Name Goes Here",
+  "author": "Sukrish Gokulakrishnan",
   "license": "ISC",
   "bugs": {
     "url": ""

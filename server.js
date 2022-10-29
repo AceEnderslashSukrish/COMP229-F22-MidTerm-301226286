@@ -1,3 +1,9 @@
+/*
+Author: Sukrish Gokulakrishnan
+Student ID: 301226286
+Web App Name: Book List
+*/
+
 let app = require('./server/config/app');
 let debug = require('debug')('comp229-F22-midterm:server');
 let http = require('http');

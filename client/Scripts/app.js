@@ -2,7 +2,7 @@
 
 /* pagination code from http://www.bootply.com/lxa0FF9yhw */
 $.fn.pageMe = function(opts){
-    var $this = this,
+    let $this = this,
         defaults = {
             perPage: 7,
             showPrevNext: false,
@@ -10,10 +10,10 @@ $.fn.pageMe = function(opts){
         },
         settings = $.extend(defaults, opts);
 
-    var listElement = $this;
-    var perPage = settings.perPage;
-    var children = listElement.children();
-    var pager = $('.pager');
+    let listElement = $this;
+    let perPage = settings.perPage;
+    let children = listElement.children();
+    let pager = $('.pager');
 
     if (typeof settings.childSelector!="undefined") {
         children = listElement.find(settings.childSelector);
@@ -23,8 +23,8 @@ $.fn.pageMe = function(opts){
         pager = $(settings.pagerSelector);
     }
 
-    var numItems = children.size();
-    var numPages = Math.ceil(numItems/perPage);
+    let numItems = children.size();
+    let numPages = Math.ceil(numItems/perPage);
 
     pager.data("curr",0);
 
@@ -32,7 +32,7 @@ $.fn.pageMe = function(opts){
         $('<li><a href="#" class="prev_link">«</a></li>').appendTo(pager);
     }
 
-    var curr = 0;
+    let curr = 0;
     while(numPages > curr && (settings.hidePageNumbers==false)){
         $('<li><a href="#" class="page_link">'+(curr+1)+'</a></li>').appendTo(pager);
         curr++;
@@ -53,7 +53,7 @@ $.fn.pageMe = function(opts){
     children.slice(0, perPage).show();
 
     pager.find('li .page_link').click(function(){
-        var clickedPage = $(this).html().valueOf()-1;
+        let clickedPage = $(this).html().valueOf()-1;
         goTo(clickedPage,perPage);
         return false;
     });
@@ -67,7 +67,7 @@ $.fn.pageMe = function(opts){
     });
 
     function previous(){
-        var goToPage = parseInt(pager.data("curr")) - 1;
+        let goToPage = parseInt(pager.data("curr")) - 1;
         goTo(goToPage);
     }
 
@@ -77,7 +77,7 @@ $.fn.pageMe = function(opts){
     }
 
     function goTo(page){
-        var startAt = page * perPage,
+        let startAt = page * perPage,
             endOn = startAt + perPage;
 
         children.css('display','none').slice(startAt, endOn).show();
